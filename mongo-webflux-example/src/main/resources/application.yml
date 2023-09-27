@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      database: test
+      host: localhost
+      port: 27017
+#    mongodb:
+#
+#      database: demo-webflux
+#      host: localhost
+#      port: 27027
+#      username: root
+#      password: 123
