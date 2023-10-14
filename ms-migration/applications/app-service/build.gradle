@@ -1,0 +1,24 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+	compile 'org.reactivecommons.utils:object-mapper:0.1.0'
+	implementation project(':jpa-repository')
+	implementation project(':jdbc-template')
+	implementation project(':api-rest')
+    implementation project(':model')
+    implementation project(':usecase')
+    implementation 'org.springframework.boot:spring-boot-starter'
+    runtimeOnly('org.springframework.boot:spring-boot-devtools')
+    compile 'com.github.bancolombia:aws-secrets-manager-sync:3.0.0'
+    // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.0'
+    // https://mvnrepository.com/artifact/org.springframework/spring-orm
+    implementation group: 'org.springframework', name: 'spring-orm', version: '5.3.10'
+    // https://mvnrepository.com/artifact/com.mchange/c3p0
+    implementation group: 'com.mchange', name: 'c3p0', version: '0.9.5.5'
+}
+
+task explodedJar(type: Copy) {
+    with jar
+    into "${buildDir}/exploded"
+}
